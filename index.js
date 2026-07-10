@@ -27,10 +27,6 @@ function gameEnd() {
 }
 
 function playButtons() {
-  let rock = "rock";
-  let paper = "paper";
-  let scissors = "scissors";
-
   rockButton.addEventListener("click", () => {
     playRound("rock", getComputerChoice());
     gameEnd();
