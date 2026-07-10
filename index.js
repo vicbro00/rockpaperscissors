@@ -18,6 +18,14 @@ function getComputerChoice() {
 
 let round = 0;
 
+function gameEnd() {
+  round++;
+
+  if(round === 5) {
+    alert("Game has ended!");
+  }
+}
+
 function playButtons() {
   let rock = "rock";
   let paper = "paper";
@@ -25,26 +33,17 @@ function playButtons() {
 
   rockButton.addEventListener("click", () => {
     playRound("rock", getComputerChoice());
-    round++;
-    if (round === 5) {
-      alert("Game has ended!");
-    }
+    gameEnd();
   });
 
   paperButton.addEventListener("click", () => {
     playRound("paper", getComputerChoice());
-    round++;
-    if (round === 5) {
-      alert("Game has ended!");
-    }
+    gameEnd();
   });
 
   scissorsButton.addEventListener("click", () => {
     playRound("scissors", getComputerChoice());
-    round++;
-    if (round === 5) {
-      alert("Game has ended!");
-    }
+    gameEnd();
   });
 }
 
