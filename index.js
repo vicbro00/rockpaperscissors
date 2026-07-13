@@ -68,3 +68,4 @@ function playRound(humanChoice, computerChoice) {
 }
 
 playButtons();
+// Already made changes to the files
