@@ -2,7 +2,7 @@ function getComputerChoice() {
   let rock = "rock";
   let paper = "paper";
   let scissors = "scissors";
-
+  
   let randomNumber = Math.floor(Math.random() * 3);
 
   if (randomNumber === 0) {
@@ -18,28 +18,33 @@ function getComputerChoice() {
 
 let round = 0;
 
-function gameEnd() {
-  round++;
-
-  if(round === 5) {
-    alert("Game has ended!");
-  }
-}
-
 function playButtons() {
+  let rock = "rock";
+  let paper = "paper";
+  let scissors = "scissors";
+
   rockButton.addEventListener("click", () => {
     playRound("rock", getComputerChoice());
-    gameEnd();
+    round++;
+    if (round === 5) {
+      alert("Game has ended!")
+    }
   });
 
   paperButton.addEventListener("click", () => {
     playRound("paper", getComputerChoice());
-    gameEnd();
+    round++;
+    if (round === 5) {
+      alert("Game has ended!")
+    }
   });
-
+  
   scissorsButton.addEventListener("click", () => {
     playRound("scissors", getComputerChoice());
-    gameEnd();
+    round++;
+    if (round === 5) {
+      alert("Game has ended!")
+    }
   });
 }
 
@@ -49,18 +54,17 @@ let computerScore = 0;
 function playRound(humanChoice, computerChoice) {
   if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
-    (humanChoice === "scissors" && computerChoice === "paper") ||
+    (humanChoice === "scissors" && computerChoice === "paper") || 
     (humanChoice === "paper" && computerChoice === "rock")
   ) {
     humanScore++;
     console.log("Human wins!");
   } else if (humanChoice === computerChoice) {
     console.log("Draw!");
-  } else {
+  } else{
     computerScore++;
     console.log("Computer wins!");
-  }
-  console.log(round);
+  }console.log(round);
 }
 
 playButtons();
